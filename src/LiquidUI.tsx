@@ -1,5 +1,6 @@
 import fetchStyles from "./utils/fetchStyles";
 import SizeHandler from './utils/sizeHandler';
+import './css/LiquidUIStyles.css';
 
 export type LiquidUIProps = {
   figureShape: 'circle' | 'square';
@@ -44,7 +45,6 @@ const LiquidUI: React.FC<LiquidUIProps> = ({
   );
   
   const [backgroundStyle= '', animationStyle= '', applyedBlur= ''] = stylesArray;
-  console.log('backgroundStyle '+backgroundStyle)
 
   const generatedStyles = {
     width: `${width}`,

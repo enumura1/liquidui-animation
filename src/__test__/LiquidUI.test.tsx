@@ -198,7 +198,7 @@ describe('test LiquidUI Component', () => {
               expectedStyleAnimationPattern = `circleLargeMovement 10s linear infinite, rotate 100s linear infinite`;
               break;
         default:
-          console.log('ERROR')
+          throw new Error(`Invalid animationIntensity: ${animationIntensityArgs}`);
           break;
       }
       expect(styleAnimation).toBe(expectedStyleAnimationPattern);
