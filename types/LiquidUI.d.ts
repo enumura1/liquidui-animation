@@ -1,3 +1,4 @@
+import './css/LiquidUIStyles.css';
 export type LiquidUIProps = {
     figureShape: 'circle' | 'square';
     size?: {
