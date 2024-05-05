@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { getSizeFromOption } from './selectSize';
 
 type Size = {
@@ -12,23 +11,30 @@ type SetSizesProps = {
   size?: Size | SizeOption;
 };
 
+const DEFAULT_SIZE: Size = { width: '200px', height: '200px' };
 
+// UIサイズを計算する関数
+const calculateUiSize = (size?: Size | SizeOption): Size => {
+  // sizeがオブジェクトの場合はそのまま返す
+  if (typeof size === 'object') {
+    return size;
+  } 
+  // sizeが文字列の場合は、対応するオプションを取得して返す
+  else if (typeof size === 'string') {
+    return getSizeFromOption(size);
+  } 
+  // sizeが未指定の場合はデフォルトサイズを返す
+  else {
+    console.error('Size not specified. Using default size.');
+    return DEFAULT_SIZE;
+  }
+};
+
+// SizeHandlerコンポーネント
 const SizeHandler = ({ size }: SetSizesProps) => {
-  const [uiSize, setUiSize] = useState<Size>({ width: '200px', height: '200px' });
-
-  useEffect(() => {
-    if (typeof size === 'object') {
-      // オブジェクトの場合
-      setUiSize(size);
-    } else if (typeof size === 'string') {
-      // 文字列の場合
-      setUiSize(getSizeFromOption(size));
-    } else {
-      // 未指定の場合
-      console.error('Size not specified. Using default size.');
-    }
-  }, [size]);
-
+  // UIサイズを計算する
+  const uiSize = calculateUiSize(size);
+  
   return uiSize;
 };
 
