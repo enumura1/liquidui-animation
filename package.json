@@ -5,6 +5,7 @@
   "author": "enumura",
   "main": "dist/LiquidUI.umd.js",
   "module": "dist/LiquidUI.mjs",
+  "types": "dist",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
     "package.json",
     "README.md",
     "LICENSE",
+    "types",
     "dist"
   ],
   "scripts": {
