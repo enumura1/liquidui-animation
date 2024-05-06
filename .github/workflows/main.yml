@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - main
+
+jobs:
+  cicd_test:
+    name: cicd_to_main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check:if PR is from develop to main branch
+        run: |
+          if [ "${{ github.event.pull_request.base.ref }}" == "main" ] && [ "${{ github.event.pull_request.head.ref }}" != "develop" ]; then
+            echo "Pull request not from develop to main branch"
+            exit 1
+          else
+            echo "Pull request from develop to main branch"
+          fi
