@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - develop
+
+jobs:
+  cicd_test:
+    name: feature_to_devlop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check:if PR is from feature to develop branch
+        run: |
+          if [ "${{ github.event.pull_request.base.ref }}" == "develop" ] && [[ "${{ github.event.pull_request.head.ref }}" =~ ^feature/.* ]]; then
+            echo "Pull request from feature to develop branch"  
+          else
+            echo "Pull request not from feature to develop branch, exiting with code 1"
+            exit 1
+          fi
