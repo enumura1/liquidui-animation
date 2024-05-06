@@ -1,5 +1,3 @@
-画像
-
 # react-component-liquidUI
 
 <!-- # Short Description -->
@@ -124,7 +122,7 @@ const App = () => {
 
 ### Properties
 
-| Property             | Type             | Description                                                                                                                                                 |
+| Property               | Type           | Description                                                                                                                                          |
 | ---------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **figureShape**        | string         | Specifies the shape of the UI. Supported values are 'circle' and 'square'.                                                                           |
 | **size**               | string, object | Specifies the size of the UI. Specify 'small', 'middle', or 'large' as a string, or specify an object in the form { width: string, height: string }. |
@@ -148,4 +146,3 @@ const App = () => {
 # License
 
 MIT license. See the [LICENSE file](/LICENSE) for details.
-
