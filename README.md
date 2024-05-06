@@ -1,30 +1,151 @@
-# React + TypeScript + Vite
+画像
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# react-component-liquidUI
 
-Currently, two official plugins are available:
+<!-- # Short Description -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+LiquidUI Component is a component for creating fluid UI in React applications. Using this component, you can create circular or rectangular components with oscillating animations.
 
-## Expanding the ESLint configuration
+<!-- # Badges -->
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+[![Github issues](https://img.shields.io/github/issues/enumura1/react-component-liquidUI)](https://github.com/enumura1/react-component-liquidUI/issues)
+[![Github forks](https://img.shields.io/github/forks/enumura1/react-component-liquidUI)](https://github.com/enumura1/react-component-liquidUI/network/members)
+[![Github stars](https://img.shields.io/github/stars/enumura1/react-component-liquidUI)](https://github.com/enumura1/react-component-liquidUI/stargazers)
+[![Github top language](https://img.shields.io/github/languages/top/enumura1/react-component-liquidUI)](https://github.com/enumura1/react-component-liquidUI/)
+[![Github license](https://img.shields.io/github/license/enumura1/react-component-liquidUI)](https://github.com/enumura1/react-component-liquidUI/)
+[![workflow](https://github.com/enumura1/react-component-liquidUI/actions/workflows/main.yml/badge.svg)](https://github.com/enumura1/react-component-liquidUI/actions/workflows/main.yml)
+[![Open in Visual Studio Code](https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc)](https://open.vscode.dev/｛enumura1｝/{react-component-liquidUI})
 
-- Configure the top-level `parserOptions` property like this:
+# Advantages
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- **Component Manipulation**：The LiquidUI Component allows for the creation of UIs with fluid-like animation effects that can be easily deployed in React applications, allowing developers to implement liquid animations in a short amount of time.
+
+- **Customizability**：The LiquidUI Component allows customization of various parameters such as shape, size, and animation intensity. This allows you to tailor the UI to your requirements.
+
+# Demo
+
+<div style="text-align: center;">
+  <img src="./public/assets/liquid-ui-sample.gif" style="width: 80%;" alt="sample-image-gif">
+</div>
+
+<br>
+
+<details><summary>sample source</summary>
+
+```tsx
+import LiquidUI from "@enumura/liquidui";
+
+const App = () => {
+  return (
+    <main>
+      <LiquidUI
+        figureShape={"circle"}
+        size={"middle"}
+        bgColor={"#FFE2FF"}
+        animationIntensity={"middle"}
+        liquidDuration={10}
+        rotateDuration={0}
+        blurIntensity={0}
+      ></LiquidUI>
+
+      <LiquidUI
+        figureShape={"square"}
+        size={"middle"}
+        bgColor={"linear-gradient(90deg, #fbd5fb, #95e9f3"}
+        animationIntensity={"strong"}
+        liquidDuration={10}
+        rotateDuration={0}
+        blurIntensity={15}
+      ></LiquidUI>
+
+      <LiquidUI
+        figureShape={"circle"}
+        size={"middle"}
+        bgColor={"linear-gradient(90deg, #C3F1FF, #0072ff)"}
+        animationIntensity={"strong"}
+        liquidDuration={12}
+        rotateDuration={1000}
+        blurIntensity={0}
+      ></LiquidUI>
+    </main>
+  );
+};
+
+export default App;
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+</details>
+
+<br>
+
+# Installation
+
+```
+
+npm i @enumura/liquidui
+
+```
+
+# Build
+
+Build with the following command.
+
+```
+
+npm run build
+
+```
+
+# Example
+
+<div style="text-align: center;">
+  <img src="./public/assets/sample-gif.gif" style="width: 80%;" alt="sample-image-gif">
+</div>
+
+<br>
+
+```tsx
+import LiquidUI from "@enumura/liquidui";
+
+const App = () => {
+  return (
+    <LiquidUI
+      figureShape="circle"
+      size="middle"
+      bgColor="linear-gradient(90deg, #00c6ff, #0072ff)"
+      liquidDuration={10}
+      animationIntensity="strong"
+      rotateDuration={100}
+      blurIntensity={20}
+    ></LiquidUI>
+  );
+};
+```
+
+### Properties
+
+| Property             | Type             | Description                                                                                                                                                 |
+| ---------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **figureShape**        | string         | Specifies the shape of the UI. Supported values are 'circle' and 'square'.                                                                           |
+| **size**               | string, object | Specifies the size of the UI. Specify 'small', 'middle', or 'large' as a string, or specify an object in the form { width: string, height: string }. |
+| **bgColor**            | string         | Specifies the background color of the UI; can be a CSS color code or a gradient.                                                                     |
+| **liquidDuration**     | number         | Specifies the background color of the UI; can be a CSS color code or a gradient.                                                                     |
+| **liquidDuration**     | number         | Specifies the time in milliseconds that a set of animations assigned to the UI will run.                                                             |
+| **animationIntensity** | string         | Specifies the animation intensity. Supported values are 'small', 'middle', and 'strong'.                                                             |
+| **rotateDuration**     | number         | Specifies the time in milliseconds per rotation when the UI rotates.                                                                                 |
+| **blurIntensity**      | number         | Specifies the intensity of the blur applied to the UI; a value greater than 0 will blur the UI.                                                      |
+
+# Contributors
+
+- [enumura1](https://github.com/enumura1)
+
+<!-- CREATED_BY_LEADYOU_README_GENERATOR -->
+
+# Tags
+
+`react` `UI`
+
+# License
+
+MIT license. See the [LICENSE file](/LICENSE) for details.
+
