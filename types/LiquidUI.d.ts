@@ -5,7 +5,7 @@ export type LiquidUIProps = {
         width: string;
         height: string;
     } | ('small' | 'middle' | 'large');
-    bgColor: string;
+    bgColor?: string;
     animationIntensity: 'small' | 'middle' | 'strong';
     liquidDuration: number;
     rotateDuration?: number;
