@@ -3,7 +3,7 @@ body {
   margin: 0;
 }
 
-.main-container {
+main {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

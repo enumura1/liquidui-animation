@@ -5,7 +5,7 @@ import './css/LiquidUIStyles.css';
 export type LiquidUIProps = {
   figureShape: 'circle' | 'square';
   size?: { width: string, height: string,} | ('small' | 'middle' | 'large'),
-  bgColor: string,
+  bgColor?: string,
   animationIntensity: 'small' | 'middle' | 'strong',
   liquidDuration: number,
   rotateDuration?: number,
@@ -17,12 +17,12 @@ export type LiquidUIProps = {
 const LiquidUI: React.FC<LiquidUIProps> = ({ 
   figureShape,
   size,
-  bgColor,
+  bgColor = '',
   liquidDuration,
   blurIntensity = 0,
   animationIntensity,
   rotateDuration = 0,
-  bgImg ='',
+  bgImg = '',
   children,
 }) => {
   
