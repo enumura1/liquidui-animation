@@ -1,8 +1,9 @@
-# react-component-liquidUI
+# liquidUI
 
 <!-- # Short Description -->
 
-LiquidUI Component is a component for creating fluid UI in React applications. Using this component, you can create circular or rectangular components with oscillating animations.
+This LiquidUI Component makes it easy to create a shaking UI in React application.
+With the LiquidUI Component, you can implement UI elements with Liquid-like shaking animation in a short time.
 
 <!-- # Badges -->
 
@@ -82,9 +83,7 @@ export default App;
 
 # Advantages
 
-- **Component Manipulation**：The LiquidUI Component allows for the creation of UIs with fluid-like animation effects that can be easily deployed in React applications, allowing developers to implement liquid animations in a short amount of time.
-
-- **Customizability**：The LiquidUI Component allows customization of various parameters such as shape, size, and animation intensity. This allows you to tailor the UI to your requirements.
+- **Customizability**：The LiquidUI Component allows customization of various parameters such as shape, size, and animation intensity.
 
 # Installation
 
@@ -94,19 +93,11 @@ npm i @enumura/liquidui
 
 ```
 
-# Build
-
-Build with the following command.
-
-```
-
-npm run build
-
-```
-
 # Example
 
-### 1. Example with blur
+## 1. Example with blur
+
+This is a sample of liquid UI with blurring.
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/enumura1/LiquidUIMotionDocs/main/blurUI.gif" style="width: 70%;" alt="sample-image-gif">
@@ -132,7 +123,9 @@ const App = () => {
 };
 ```
 
-### 2. Example of rotation
+## 2. Example of rotation
+
+This is a sample of a rotating liquid UI.
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/enumura1/LiquidUIMotionDocs/main/rotationUI.gif" style="width: 70%;" alt="sample-image-gif">
@@ -157,7 +150,9 @@ const App = () => {
 };
 ```
 
-### 3. Example of displaying image
+## 3. Example of displaying image
+
+This is a sample of liquid UI including images.
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/enumura1/LiquidUIMotionDocs/main/image.gif" style="width: 70%;" alt="sample-image-gif">
@@ -182,19 +177,40 @@ const App = () => {
 };
 ```
 
+## 4. Example of LiquidUI component with custom size
+
+If you wish to specify any value for the size property, specify it in object format as shown below.
+
+```tsx
+import LiquidUI from "@enumura/liquidui";
+
+const App = () => {
+  return (
+    <LiquidUI
+      figureShape={"circle"}
+      size={{ width: "100px", height: "100px" }}
+      bgImg={"assets/sampleImg.webp"}
+      animationIntensity={"strong"}
+      liquidDuration={12}
+      blurIntensity={0}
+    ></LiquidUI>
+  );
+};
+```
+
 # Properties
 
-| Property               | Type           | Description                                                                                                                                          |
-| ---------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **figureShape**        | string         | Specifies the shape of the UI. Supported values are 'circle' and 'square'.                                                                           |
-| **size**               | string, object | Specifies the size of the UI. Specify 'small', 'middle', or 'large' as a string, or specify an object in the form { width: string, height: string }. |
-| **bgColor**            | string         | Specifies the background color of the UI. Specify CSS color names, color codes, gradients, etc.                                                      |
-| **bgImg**              | string         | Specifies the background image of the UI. should be a valid path to an image file located in the 'public/assets' directory.                          |
-| **liquidDuration**     | number         | Specifies the background color of the UI; can be a CSS color code or a gradient.                                                                     |
-| **liquidDuration**     | number         | Specifies the time in milliseconds that a set of animations assigned to the UI will run.                                                             |
-| **animationIntensity** | string         | Specifies the animation intensity. Supported values are 'small', 'middle', and 'strong'.                                                             |
-| **rotateDuration**     | number         | Specifies the time in milliseconds per rotation when the UI rotates.                                                                                 |
-| **blurIntensity**      | number         | Specifies the intensity of the blur applied to the UI; a value greater than 0 will blur the UI.                                                      |
+| Property               | Type           | Description                                                                                                                                              |
+| ---------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **figureShape**        | string         | Specifies the shape of the UI. Supported values are 'circle' and 'square'.                                                                               |
+| **size**               | string, object | Specifies the size of the UI. Specify 'small', 'middle', or 'large' as a string, or specify an object in the form { {width: 'XXXpx', height: '○○○px'} }. |
+| **bgColor**            | string         | Specifies the background color of the UI. Specify CSS color names, color codes, gradients, etc.                                                          |
+| **bgImg**              | string         | Specifies the background image of the UI. should be a valid path to an image file located in the 'public/assets' directory.                              |
+| **liquidDuration**     | number         | Specifies the background color of the UI; can be a CSS color code or a gradient.                                                                         |
+| **liquidDuration**     | number         | Specifies the time in milliseconds that a set of animations assigned to the UI will run.                                                                 |
+| **animationIntensity** | string         | Specifies the animation intensity. Supported values are 'small', 'middle', and 'strong'.                                                                 |
+| **rotateDuration**     | number         | Specifies the time in milliseconds per rotation when the UI rotates.                                                                                     |
+| **blurIntensity**      | number         | Specifies the intensity of the blur applied to the UI; a value greater than 0 will blur the UI.                                                          |
 
 # Contributors
 
