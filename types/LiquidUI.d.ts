@@ -1,12 +1,12 @@
-import './css/LiquidUIStyles.css';
+import "./css/LiquidUIStyles.css";
 export type LiquidUIProps = {
-    figureShape: 'circle' | 'square';
+    figureShape: "circle" | "square";
     size?: {
         width: string;
         height: string;
-    } | ('small' | 'middle' | 'large');
+    } | ("small" | "middle" | "large");
     bgColor?: string;
-    animationIntensity: 'small' | 'middle' | 'strong';
+    animationIntensity: "small" | "middle" | "strong";
     liquidDuration: number;
     rotateDuration?: number;
     blurIntensity?: number;

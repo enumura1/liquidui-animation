@@ -1,6 +1,6 @@
 {
   "name": "@enumura/liquidui",
-  "version": "0.1.62",
+  "version": "0.1.64",
   "description": "liquid UI is available as a component in this package.",
   "author": "enumura",
   "main": "dist/LiquidUI.umd.js",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/react": "^15.0.6",
+  "@testing-library/react": "^15.0.6",
     "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.2.66",
