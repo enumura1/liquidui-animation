@@ -1,6 +1,6 @@
 {
   "name": "@enumura/liquidui",
-  "version": "0.1.64",
+  "version": "0.1.65",
   "description": "liquid UI is available as a component in this package.",
   "author": "enumura",
   "main": "dist/LiquidUI.umd.js",
