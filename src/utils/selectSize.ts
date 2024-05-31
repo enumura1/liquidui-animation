@@ -3,19 +3,19 @@ type Size = {
   height: string;
 };
 
-type SizeOption = 'small' | 'middle' | 'large';
+type SizeOption = "small" | "middle" | "large";
 
 
 export const getSizeFromOption = (option: SizeOption): Size => {
   switch (option) {
-    case 'small':
-      return { width: '200px', height: '200px' };
-    case 'middle':
-      return { width: '400px', height: '400px' };
-    case 'large':
-      return { width: '600px', height: '600px' };
+    case "small":
+      return { width: "200px", height: "200px" };
+    case "middle":
+      return { width: "400px", height: "400px" };
+    case "large":
+      return { width: "600px", height: "600px" };
     default:
-      console.error('Invalid size option:', option);
-      return { width: '200px', height: '200px' };
+      console.error("Invalid size option:", option);
+      return { width: "200px", height: "200px" };
   }
 };
