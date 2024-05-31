@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/enumura1/react-component-liquidUI.git"
+    "url": "https://github.com/enumura1/liquidui.git"
   },
   "files": [
     "package.json",
@@ -21,7 +21,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint-fix": "eslint src --ext .ts,.tsx --fix",
     "test": "jest",
     "preview": "vite preview"
   },
