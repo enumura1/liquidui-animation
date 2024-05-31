@@ -1,17 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import LiquidUI, { LiquidUIProps } from '../LiquidUI';
+import { render, screen } from "@testing-library/react";
+import LiquidUI, { LiquidUIProps } from "../LiquidUI";
 
-describe('test LiquidUI Component', () => {
+describe("test LiquidUI Component", () => {
 
   // test figureShape: test circle, square
-  test.each<'circle' | 'square'>(['circle', 'square'])(
-    'should render correctly with figureShape: %s', (figureShapeArgs) => {
+  test.each<"circle" | "square">(["circle", "square"])(
+    "should render correctly with figureShape: %s", (figureShapeArgs) => {
       const figureShapeProps: LiquidUIProps = {
         figureShape: figureShapeArgs,
-        size: { width: '400px', height: '400px' },
-        bgColor: 'linear-gradient(90deg, #00c6ff, #0072ff)',
+        size: { width: "400px", height: "400px" },
+        bgColor: "linear-gradient(90deg, #00c6ff, #0072ff)",
         liquidDuration: 10,
-        animationIntensity: 'small',
+        animationIntensity: "small",
         rotateDuration: 100,
       };
       render(
@@ -23,11 +23,11 @@ describe('test LiquidUI Component', () => {
       const liquidUIWrapper9 = screen.getByText(/Dummy text to access LiquidUI components/i);
       const figureShapeStyles = liquidUIWrapper9.style.animation;
 
-      let expectedStyleAnimationPatternaa ='';
+      let expectedStyleAnimationPatternaa ="";
 
-      if(figureShapeArgs === 'circle') {
+      if(figureShapeArgs === "circle") {
         expectedStyleAnimationPatternaa = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
-      }else if(figureShapeArgs === 'square') {
+      }else if(figureShapeArgs === "square") {
         expectedStyleAnimationPatternaa = `squareSmallMovement 10s linear infinite, rotate 100s linear infinite`;
       }else{
         throw new Error(`Invalid figure shape: ${figureShapeArgs}`);
@@ -38,13 +38,13 @@ describe('test LiquidUI Component', () => {
 
 
   // bgColor: test red
-  test('should render correctly with bgColor', () => {
+  test("should render correctly with bgColor", () => {
     const bgColorProps: LiquidUIProps = {
-      figureShape: 'circle',
-      size: { width: '400px', height: '400px' },
-      bgColor: 'red',
+      figureShape: "circle",
+      size: { width: "400px", height: "400px" },
+      bgColor: "red",
       liquidDuration: 10,
-      animationIntensity: 'small',
+      animationIntensity: "small",
       rotateDuration: 100,
     };
     render(
@@ -56,21 +56,21 @@ describe('test LiquidUI Component', () => {
     const liquidUIWrapper8 = screen.getByText(/Dummy text to access LiquidUI components/i);
     const backgroundStyle = liquidUIWrapper8.style.background;
   
-    expect(backgroundStyle).toBe('red');
+    expect(backgroundStyle).toBe("red");
   });
 
 
   // size: test 
-  describe('with size property', () => {
+  describe("with size property", () => {
 
     // size: test small, middle, or strong
-    test.each<'small' | 'middle' | 'large'>(['small', 'middle', 'large'])(
-      'should render correctly with size: %s', (sizeArgs) => {
+    test.each<"small" | "middle" | "large">(["small", "middle", "large"])(
+      "should render correctly with size: %s", (sizeArgs) => {
         const stringSizeProps: LiquidUIProps = {
-          figureShape: 'circle',
-          bgColor: 'linear-gradient(90deg, #00c6ff, #0072ff)',
+          figureShape: "circle",
+          bgColor: "linear-gradient(90deg, #00c6ff, #0072ff)",
           liquidDuration: 10,
-          animationIntensity: 'small',
+          animationIntensity: "small",
           rotateDuration: 100,
           size: sizeArgs,
         };
@@ -87,20 +87,20 @@ describe('test LiquidUI Component', () => {
         let expectedHeight;
         
         switch (sizeArgs) {
-          case 'small':
-            expectedWidth = '200px';
-            expectedHeight = '200px';
+          case "small":
+            expectedWidth = "200px";
+            expectedHeight = "200px";
             break;
-          case 'middle':
-            expectedWidth = '400px';
-            expectedHeight = '400px';
+          case "middle":
+            expectedWidth = "400px";
+            expectedHeight = "400px";
             break;
-          case 'large':
-            expectedWidth = '600px';
-            expectedHeight = '600px';
+          case "large":
+            expectedWidth = "600px";
+            expectedHeight = "600px";
             break;
           default:
-            throw new Error('Invalid size');
+            throw new Error("Invalid size");
         }
 
         expect(uiWidth).toBe(expectedWidth);
@@ -110,14 +110,14 @@ describe('test LiquidUI Component', () => {
 
 
     // size test object
-    test('should render correctly with size as an object', () => {
+    test("should render correctly with size as an object", () => {
       const objectSizeProps: LiquidUIProps = {
-        figureShape: 'circle',
-        bgColor: 'linear-gradient(90deg, #00c6ff, #0072ff)',
+        figureShape: "circle",
+        bgColor: "linear-gradient(90deg, #00c6ff, #0072ff)",
         liquidDuration: 10,
-        animationIntensity: 'small',
+        animationIntensity: "small",
         rotateDuration: 100,
-        size: { width: '400px', height: '400px' },
+        size: { width: "400px", height: "400px" },
       };
       render(
         <LiquidUI {...objectSizeProps} >
@@ -129,20 +129,20 @@ describe('test LiquidUI Component', () => {
       const uiWidth = liquidUIWrapper6.style.width;
       const uiHeight = liquidUIWrapper6.style.height;
 
-      expect(uiWidth).toBe('400px');
-      expect(uiHeight).toBe('400px');
+      expect(uiWidth).toBe("400px");
+      expect(uiHeight).toBe("400px");
     });
   });
 
 
   // liquidDuration: test [-10, 0, 5]
-  test.each([-10, 0, 5])('should render correctly with liquidDuration: %i', (liquidDurationArgs) => {
+  test.each([-10, 0, 5])("should render correctly with liquidDuration: %i", (liquidDurationArgs) => {
     const liquidDurationProps: LiquidUIProps = {
-      figureShape: 'circle',
-      size: { width: '300px', height: '300px' },
-      bgColor: 'linear-gradient(90deg, #00c6ff, #0072ff)',
+      figureShape: "circle",
+      size: { width: "300px", height: "300px" },
+      bgColor: "linear-gradient(90deg, #00c6ff, #0072ff)",
       liquidDuration: liquidDurationArgs,
-      animationIntensity: 'small',
+      animationIntensity: "small",
       rotateDuration: 100,
     };
     render(
@@ -154,11 +154,11 @@ describe('test LiquidUI Component', () => {
     const liquidUIWrapper5 = screen.getByText(/Dummy text to access LiquidUI components/i);
     const styleLiquid = liquidUIWrapper5.style.animation;
 
-    let expectedLiquidStylepp = '';
+    let expectedLiquidStylepp = "";
     if (liquidDurationArgs >= 0) {
       expectedLiquidStylepp = `circleSmallMovement ${liquidDurationArgs}s linear infinite, rotate 100s linear infinite`;
     }else {
-      expectedLiquidStylepp = 'circleSmallMovement 0s linear infinite, rotate 100s linear infinite';
+      expectedLiquidStylepp = "circleSmallMovement 0s linear infinite, rotate 100s linear infinite";
     }
 
     expect(styleLiquid).toBe(expectedLiquidStylepp);
@@ -166,12 +166,12 @@ describe('test LiquidUI Component', () => {
 
 
   // test: animationIntensity 'small' | 'middle' | 'strong'
-  test.each<'small' | 'middle' | 'strong'>(['small', 'middle', 'strong'])(
-    'should render correctly with animationIntensity: %s', (animationIntensityArgs) => {
+  test.each<"small" | "middle" | "strong">(["small", "middle", "strong"])(
+    "should render correctly with animationIntensity: %s", (animationIntensityArgs) => {
       const animationIntensityProps: LiquidUIProps = {
-        figureShape: 'circle',
-        size: { width: '300px', height: '300px' },
-        bgColor: 'linear-gradient(90deg, #00c6ff, #0072ff)',
+        figureShape: "circle",
+        size: { width: "300px", height: "300px" },
+        bgColor: "linear-gradient(90deg, #00c6ff, #0072ff)",
         liquidDuration: 10,
         animationIntensity: animationIntensityArgs,
         rotateDuration: 100,
@@ -185,16 +185,16 @@ describe('test LiquidUI Component', () => {
       const liquidUIWrapper4 = screen.getByText(/Dummy text to access LiquidUI components/i);
       const styleAnimation = liquidUIWrapper4.style.animation;
 
-      let expectedStyleAnimationPattern = '';
+      let expectedStyleAnimationPattern = "";
 
       switch (animationIntensityArgs) {
-        case 'small':
+        case "small":
               expectedStyleAnimationPattern = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
               break;
-        case 'middle':
+        case "middle":
               expectedStyleAnimationPattern = `circleMiddleMovement 10s linear infinite, rotate 100s linear infinite`;
               break;
-        case 'strong':
+        case "strong":
               expectedStyleAnimationPattern = `circleLargeMovement 10s linear infinite, rotate 100s linear infinite`;
               break;
         default:
@@ -207,12 +207,12 @@ describe('test LiquidUI Component', () => {
 
 
   // test: rotateDuration [-10, 0, 10]
-  test.each([-10, 0, 10])('should render correctly with rotateDuration: %i', (rotateDurationArgs) => {
+  test.each([-10, 0, 10])("should render correctly with rotateDuration: %i", (rotateDurationArgs) => {
     const rotateDurationProps: LiquidUIProps = {
-      figureShape: 'circle',
-      size: { width: '300px', height: '300px' },
-      bgColor: 'linear-gradient(90deg, #00c6ff, #0072ff)',
-      animationIntensity: 'small',
+      figureShape: "circle",
+      size: { width: "300px", height: "300px" },
+      bgColor: "linear-gradient(90deg, #00c6ff, #0072ff)",
+      animationIntensity: "small",
       liquidDuration: 10,
       blurIntensity: 10,
       rotateDuration: rotateDurationArgs,
@@ -226,11 +226,11 @@ describe('test LiquidUI Component', () => {
     const liquidUIWrapper3 = screen.getByText(/Dummy text to access LiquidUI components/i);
     const styleFilter = liquidUIWrapper3.style.animation;
 
-    let expectedStyleAnimation = '';
+    let expectedStyleAnimation = "";
     if (rotateDurationArgs > 0) {
       expectedStyleAnimation = `circleSmallMovement 10s linear infinite, rotate ${rotateDurationArgs}s linear infinite`;
     }else {
-      expectedStyleAnimation = 'circleSmallMovement 10s linear infinite';
+      expectedStyleAnimation = "circleSmallMovement 10s linear infinite";
     }
 
     expect(styleFilter).toBe(expectedStyleAnimation);
@@ -238,12 +238,12 @@ describe('test LiquidUI Component', () => {
 
   
   // test: blurIntensity [-10, 0, 10]
-  test.each([-10, 0, 10])('should render correctly with blurIntensity: %i', (blurIntensityArgs) => {
+  test.each([-10, 0, 10])("should render correctly with blurIntensity: %i", (blurIntensityArgs) => {
     const blurIntensityProps: LiquidUIProps = {
-      figureShape: 'circle',
-      size: { width: '300px', height: '300px' },
-      bgColor: 'linear-gradient(90deg, #00c6ff, #0072ff)',
-      animationIntensity: 'small',
+      figureShape: "circle",
+      size: { width: "300px", height: "300px" },
+      bgColor: "linear-gradient(90deg, #00c6ff, #0072ff)",
+      animationIntensity: "small",
       liquidDuration: 10,
       blurIntensity: blurIntensityArgs,
       rotateDuration: 10,
@@ -256,7 +256,7 @@ describe('test LiquidUI Component', () => {
     const liquidUIWrapper2 = screen.getByText(/Dummy text to access LiquidUI components/i);
     const styleFilter = liquidUIWrapper2.style.filter;
 
-    let expectedStyleFilter = '';
+    let expectedStyleFilter = "";
     if (blurIntensityArgs > 0) {
       expectedStyleFilter = `blur(${blurIntensityArgs}px)`;
     }
@@ -264,15 +264,15 @@ describe('test LiquidUI Component', () => {
     expect(styleFilter).toBe(expectedStyleFilter);
   });
 
-  test('renders with correct background style when bgImg prop is provided', () => {
+  test("renders with correct background style when bgImg prop is provided", () => {
     render(
       <LiquidUI
         figureShape='circle'
-        size={'middle'}
-        bgColor={'linear-gradient(90deg, #00c6ff, #0072ff)'}
-        bgImg={'../assets/sampleImg.png'}
+        size={"middle"}
+        bgColor={"linear-gradient(90deg, #00c6ff, #0072ff)"}
+        bgImg={"../assets/sampleImg.png"}
         liquidDuration={10}
-        animationIntensity={'strong'}
+        animationIntensity={"strong"}
         rotateDuration={100}
         blurIntensity={20}>
           Dummy text to access LiquidUI components
@@ -282,6 +282,6 @@ describe('test LiquidUI Component', () => {
     const liquidUIWrapper = screen.getByText(/Dummy text to access LiquidUI components/i);
     const backgroundImageUrl = liquidUIWrapper.style.background;
 
-    expect(backgroundImageUrl).toBe('url(../assets/sampleImg.png)');
+    expect(backgroundImageUrl).toBe("url(../assets/sampleImg.png)");
   });
 });
