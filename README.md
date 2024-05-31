@@ -28,9 +28,6 @@ With the LiquidUI Component, you can implement UI elements with Liquid-like shak
 ```tsx
 import LiquidUI from "@enumura/liquidui";
 
-import "./css/LiquidUIStyles.css";
-import LiquidUI from "./LiquidUI";
-
 const App = () => {
   return (
     <main>
@@ -131,6 +128,25 @@ Lowering the value makes the UI move faster, and raising the value makes the UI 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/enumura1/LiquidUIMotionDocs/main/LiquidDuration_.gif" style="width: 70%;" alt="sample-image-gif">
 </div>
+
+```tsx
+import LiquidUI from "@enumura/liquidui";
+
+const App = () => {
+  return (
+    <>
+      <LiquidUI
+        figureShape={"circle"}
+        size={"middle"}
+        bgColor={"blue"}
+        animationIntensity={"strong"}
+        liquidDuration={1}
+        rotateDuration={30}
+      ></LiquidUI>
+    </>
+  );
+};
+```
 
 ## 3. Example of displaying image
 
