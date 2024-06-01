@@ -3,8 +3,8 @@
   "version": "0.1",
   "description": "liquidui-animation UI is available as a component in this package.",
   "author": "enumura",
-  "main": "dist/LiquidUI.umd.js",
-  "module": "dist/LiquidUI.mjs",
+  "main": "dist/liquidui-animation.umd.js",
+  "module": "dist/liquidui-animation.mjs",
   "types": "dist/LiquidUI.d.ts",
   "license": "MIT",
   "repository": {

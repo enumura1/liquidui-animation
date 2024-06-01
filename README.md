@@ -2,7 +2,7 @@
 
 <!-- # Short Description -->
 
-This liquidui-animation Component makes it easy to create a shaking UI in React application.  
+This liquidui-animation Component makes it easy to create a shaking UI React application.  
 With the liquidui-animation Component, you can implement UI elements with Liquid-like shaking animation in a short time.
 
 <!-- # Badges -->
