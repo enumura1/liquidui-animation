@@ -1,9 +1,9 @@
-# liquidUI
+# liquidui-animation
 
 <!-- # Short Description -->
 
-This LiquidUI Component makes it easy to create a shaking UI in React application.  
-With the LiquidUI Component, you can implement UI elements with Liquid-like shaking animation in a short time.
+This liquidui-animation Component makes it easy to create a shaking UI in React application.  
+With the liquidui-animation Component, you can implement UI elements with Liquid-like shaking animation in a short time.
 
 <!-- # Badges -->
 
@@ -26,7 +26,7 @@ With the LiquidUI Component, you can implement UI elements with Liquid-like shak
 <details><summary>sample source</summary>
 
 ```tsx
-import LiquidUI from "@enumura/liquidui";
+import LiquidUI from "@enumura/liquidui-animation";
 
 const App = () => {
   return (
@@ -80,13 +80,13 @@ export default App;
 
 # Advantages
 
-- **Customizability**：The LiquidUI Component allows customization of various parameters such as shape, size, and animation intensity.
+- **Customizability**：The liquidui-animation Component allows customization of various parameters such as shape, size, and animation intensity.
 
 # Installation
 
 ```
 
-npm i @enumura/liquidui
+npm i @enumura/liquidui-animation
 
 ```
 
@@ -104,7 +104,7 @@ Decreasing the value of the `rotateDuration` property speeds up the rotation and
 <br>
 
 ```tsx
-import LiquidUI from "@enumura/liquidui";
+import LiquidUI from "@enumura/liquidui-animation";
 
 const App = () => {
   return (
@@ -130,7 +130,7 @@ Lowering the value makes the UI move faster, and raising the value makes the UI 
 </div>
 
 ```tsx
-import LiquidUI from "@enumura/liquidui";
+import LiquidUI from "@enumura/liquidui-animation";
 
 const App = () => {
   return (
@@ -160,7 +160,7 @@ Specify the path of the image for the `bgImg` property.
 <br>
 
 ```tsx
-import LiquidUI from "@enumura/liquidui";
+import LiquidUI from "@enumura/liquidui-animation";
 
 const App = () => {
   return (
@@ -188,7 +188,7 @@ Increasing the value of the `blurIntensity` property increases the blur intensit
 <br>
 
 ```tsx
-import LiquidUI from "@enumura/liquidui";
+import LiquidUI from "@enumura/liquidui-animation";
 
 const App = () => {
   return (
@@ -204,13 +204,13 @@ const App = () => {
 };
 ```
 
-## 5. Example of LiquidUI component with custom size
+## 5. Example of liquidui-animation component with custom size
 
 This is an example of a case where you want to specify a custom UI size.  
 Specify an arbitrary value for the `size` property in object format such as `{width: 'XXXpx', height: '○○○px'}`.
 
 ```tsx
-import LiquidUI from "@enumura/liquidui";
+import LiquidUI from "@enumura/liquidui-animation";
 
 const App = () => {
   return (
@@ -248,7 +248,7 @@ const App = () => {
 
 # Tags
 
-`react` `UI`
+`react` `UI` `Animation`
 
 # License
 
