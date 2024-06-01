@@ -10,8 +10,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/LiquidUI.tsx'),
-      name: 'LiquidUI',
-      fileName: 'LiquidUI',
+      name: 'liquidui-animation',
+      fileName: 'liquidui-animation',
     },
   },
 })

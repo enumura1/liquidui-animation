@@ -1,15 +1,15 @@
 {
-  "name": "@enumura/liquidui",
-  "version": "0.1.65",
-  "description": "liquid UI is available as a component in this package.",
+  "name": "@enumura/liquidui-animation",
+  "version": "0.1",
+  "description": "liquidui-animation UI is available as a component in this package.",
   "author": "enumura",
-  "main": "dist/LiquidUI.umd.js",
-  "module": "dist/LiquidUI.mjs",
+  "main": "dist/liquidui-animation.umd.js",
+  "module": "dist/liquidui-animation.mjs",
   "types": "dist/LiquidUI.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/enumura1/liquidui.git"
+    "url": "https://github.com/enumura1/liquidui-animation.git"
   },
   "files": [
     "package.json",
