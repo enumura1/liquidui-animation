@@ -42,14 +42,14 @@ const LiquidUI: React.FC<LiquidUIProps> = ({
     bgImg,
   );
   
-  const [backgroundStyle= "", animationStyle= "", applyedBlur= ""] = stylesArray;
+  const [backgroundStyle= "", animationStyle= "", appliedBlur= ""] = stylesArray;
 
   const generatedStyles = {
     width: `${width}`,
     height: `${height}`,
     background: backgroundStyle,
     animation: animationStyle,
-    ...(applyedBlur && { filter: applyedBlur }),
+    ...(appliedBlur && { filter: appliedBlur }),
     ...(bgImg && { backgroundSize: "cover"}),
     ...(bgImg && { backgroundPosition: "center center"}),
   };

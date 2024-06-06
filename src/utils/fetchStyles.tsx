@@ -34,10 +34,10 @@ const fetchStyles: FetchStylesProps = (
 
   const animationStyle = animationStyleBuilder();
   
-  const applyedBluer= `blur(${blurIntensity}px)`;
+  const appliedBluer= `blur(${blurIntensity}px)`;
   const generatedStyles = blurIntensity !== 0 
     
-    ? [backgroundStyle, animationStyle, applyedBluer]
+    ? [backgroundStyle, animationStyle, appliedBluer]
     
     : [backgroundStyle, animationStyle];
 
