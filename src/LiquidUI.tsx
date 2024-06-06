@@ -14,7 +14,7 @@ export type LiquidUIProps = {
   children?: React.ReactNode,
 }
 
-const LiquidUI: React.FC<LiquidUIProps> = ({ 
+const LiquidUI: React.FC<LiquidUIProps> = ({
   figureShape,
   size,
   bgColor = "",
@@ -25,13 +25,13 @@ const LiquidUI: React.FC<LiquidUIProps> = ({
   bgImg = "",
   children,
 }) => {
-  
+
   const { width, height } = SizeHandler({ size });
 
   const validLiquidDuration = Math.max(0, liquidDuration);
   const validRotateDuration = Math.max(0, rotateDuration);
   const validBlurIntensity = Math.max(0, blurIntensity);
-  
+
   const stylesArray = fetchStyles(
     figureShape,
     bgColor,
@@ -41,7 +41,7 @@ const LiquidUI: React.FC<LiquidUIProps> = ({
     validRotateDuration.toString(),
     bgImg,
   );
-  
+
   const [backgroundStyle= "", animationStyle= "", appliedBlur= ""] = stylesArray;
 
   const generatedStyles = {

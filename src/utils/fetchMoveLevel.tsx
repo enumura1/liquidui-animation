@@ -15,7 +15,7 @@ const selectCssPatern = (
           selectedCssPatern = "circleLargeMovement";
         }
         return selectedCssPatern;
-      
+
       case "square":
         if(animationIntensity === "small"){
           selectedCssPatern = "squareSmallMovement";
