@@ -20,7 +20,9 @@ const fetchStyles: FetchStylesProps = (
   bgImg = "",
 ) => {
 
-  const backgroundStyle  = bgImg === ""  ? bgColor: `url(${bgImg})`;
+  const backgroundStyle = bgImg === "" 
+    ? bgColor
+    : `url(${bgImg})`;
 
   const animationStyleBuilder = () => {
     const selectedCSS = selectCssPatern(figureShape, animationIntensity);
@@ -33,7 +35,7 @@ const fetchStyles: FetchStylesProps = (
 
   const animationStyle = animationStyleBuilder();
 
-  const appliedBluer= `blur(${blurIntensity}px)`;
+  const appliedBluer = `blur(${blurIntensity}px)`;
   const generatedStyles = blurIntensity !== 0
     ? [backgroundStyle, animationStyle, appliedBluer]
     : [backgroundStyle, animationStyle];

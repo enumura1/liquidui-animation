@@ -23,16 +23,16 @@ describe("test LiquidUI Component", () => {
       const liquidUIWrapper9 = screen.getByText(/Dummy text to access LiquidUI components/i);
       const figureShapeStyles = liquidUIWrapper9.style.animation;
 
-      let expectedStyleAnimationPatternaa ="";
+      let expectedStyleAnimationPattern = "";
 
-      if(figureShapeArgs === "circle") {
-        expectedStyleAnimationPatternaa = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
-      }else if(figureShapeArgs === "square") {
-        expectedStyleAnimationPatternaa = `squareSmallMovement 10s linear infinite, rotate 100s linear infinite`;
-      }else{
+      if (figureShapeArgs === "circle") {
+        expectedStyleAnimationPattern = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
+      } else if (figureShapeArgs === "square") {
+        expectedStyleAnimationPattern = `squareSmallMovement 10s linear infinite, rotate 100s linear infinite`;
+      } else{
         throw new Error(`Invalid figure shape: ${figureShapeArgs}`);
       }
-      expect(figureShapeStyles).toBe(expectedStyleAnimationPatternaa);
+      expect(figureShapeStyles).toBe(expectedStyleAnimationPattern);
     }
   );
 
@@ -189,14 +189,14 @@ describe("test LiquidUI Component", () => {
 
       switch (animationIntensityArgs) {
         case "small":
-              expectedStyleAnimationPattern = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
-              break;
+          expectedStyleAnimationPattern = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
+          break;
         case "middle":
-              expectedStyleAnimationPattern = `circleMiddleMovement 10s linear infinite, rotate 100s linear infinite`;
-              break;
+          expectedStyleAnimationPattern = `circleMiddleMovement 10s linear infinite, rotate 100s linear infinite`;
+          break;
         case "strong":
-              expectedStyleAnimationPattern = `circleLargeMovement 10s linear infinite, rotate 100s linear infinite`;
-              break;
+          expectedStyleAnimationPattern = `circleLargeMovement 10s linear infinite, rotate 100s linear infinite`;
+          break;
         default:
           throw new Error(`Invalid animationIntensity: ${animationIntensityArgs}`);
           break;
