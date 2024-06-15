@@ -23,16 +23,16 @@ describe("test LiquidUI Component", () => {
       const liquidUIWrapper9 = screen.getByText(/Dummy text to access LiquidUI components/i);
       const figureShapeStyles = liquidUIWrapper9.style.animation;
 
-      let expectedStyleAnimationPatternaa ="";
+      let expectedStyleAnimationPattern = "";
 
-      if(figureShapeArgs === "circle") {
-        expectedStyleAnimationPatternaa = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
-      }else if(figureShapeArgs === "square") {
-        expectedStyleAnimationPatternaa = `squareSmallMovement 10s linear infinite, rotate 100s linear infinite`;
-      }else{
+      if (figureShapeArgs === "circle") {
+        expectedStyleAnimationPattern = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
+      } else if (figureShapeArgs === "square") {
+        expectedStyleAnimationPattern = `squareSmallMovement 10s linear infinite, rotate 100s linear infinite`;
+      } else{
         throw new Error(`Invalid figure shape: ${figureShapeArgs}`);
       }
-      expect(figureShapeStyles).toBe(expectedStyleAnimationPatternaa);
+      expect(figureShapeStyles).toBe(expectedStyleAnimationPattern);
     }
   );
 
@@ -55,12 +55,12 @@ describe("test LiquidUI Component", () => {
 
     const liquidUIWrapper8 = screen.getByText(/Dummy text to access LiquidUI components/i);
     const backgroundStyle = liquidUIWrapper8.style.background;
-  
+
     expect(backgroundStyle).toBe("red");
   });
 
 
-  // size: test 
+  // size: test
   describe("with size property", () => {
 
     // size: test small, middle, or strong
@@ -85,7 +85,7 @@ describe("test LiquidUI Component", () => {
         const uiHeight = liquidUIWrapper7.style.height;
         let expectedWidth;
         let expectedHeight;
-        
+
         switch (sizeArgs) {
           case "small":
             expectedWidth = "200px";
@@ -189,14 +189,14 @@ describe("test LiquidUI Component", () => {
 
       switch (animationIntensityArgs) {
         case "small":
-              expectedStyleAnimationPattern = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
-              break;
+          expectedStyleAnimationPattern = `circleSmallMovement 10s linear infinite, rotate 100s linear infinite`;
+          break;
         case "middle":
-              expectedStyleAnimationPattern = `circleMiddleMovement 10s linear infinite, rotate 100s linear infinite`;
-              break;
+          expectedStyleAnimationPattern = `circleMiddleMovement 10s linear infinite, rotate 100s linear infinite`;
+          break;
         case "strong":
-              expectedStyleAnimationPattern = `circleLargeMovement 10s linear infinite, rotate 100s linear infinite`;
-              break;
+          expectedStyleAnimationPattern = `circleLargeMovement 10s linear infinite, rotate 100s linear infinite`;
+          break;
         default:
           throw new Error(`Invalid animationIntensity: ${animationIntensityArgs}`);
           break;
@@ -222,7 +222,7 @@ describe("test LiquidUI Component", () => {
         Dummy text to access LiquidUI components
       </LiquidUI>
     );
-    
+
     const liquidUIWrapper3 = screen.getByText(/Dummy text to access LiquidUI components/i);
     const styleFilter = liquidUIWrapper3.style.animation;
 
@@ -236,7 +236,7 @@ describe("test LiquidUI Component", () => {
     expect(styleFilter).toBe(expectedStyleAnimation);
   });
 
-  
+
   // test: blurIntensity [-10, 0, 10]
   test.each([-10, 0, 10])("should render correctly with blurIntensity: %i", (blurIntensityArgs) => {
     const blurIntensityProps: LiquidUIProps = {

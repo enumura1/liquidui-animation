@@ -20,9 +20,10 @@ const fetchStyles: FetchStylesProps = (
   bgImg = "",
 ) => {
 
-  
-  const backgroundStyle  = bgImg === ""  ? bgColor: `url(${bgImg})`;
-  
+  const backgroundStyle = bgImg === "" 
+    ? bgColor
+    : `url(${bgImg})`;
+
   const animationStyleBuilder = () => {
     const selectedCSS = selectCssPatern(figureShape, animationIntensity);
     if (rotateDuration !== "0") {
@@ -33,16 +34,13 @@ const fetchStyles: FetchStylesProps = (
   };
 
   const animationStyle = animationStyleBuilder();
-  
-  const applyedBluer= `blur(${blurIntensity}px)`;
-  const generatedStyles = blurIntensity !== 0 
-    
-    ? [backgroundStyle, animationStyle, applyedBluer]
-    
+
+  const appliedBluer = `blur(${blurIntensity}px)`;
+  const generatedStyles = blurIntensity !== 0
+    ? [backgroundStyle, animationStyle, appliedBluer]
     : [backgroundStyle, animationStyle];
 
   return generatedStyles;
 };
 
 export default fetchStyles;
-  
